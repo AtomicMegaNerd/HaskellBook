@@ -20,6 +20,10 @@ letterIndex :: Int -> Char
 letterIndex x = s !! x
     where s = "Curry is awesome!"
 
+rvrs :: [Char] -> [Char]
+rvrs s = unwords $ reverse wds
+    where wds = words s
+
 main :: IO ()
 main = do
     print $ exclam "Curry is awesome"
@@ -27,3 +31,4 @@ main = do
     print $ getLastWord "Curry is awesome!"
     print $ thirdLetter "Curry is awesome!"
     print $ letterIndex 5
+    print $ rvrs "Curry is awesome"

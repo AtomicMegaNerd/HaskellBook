@@ -9,4 +9,4 @@ printSecond = do
 main :: IO ()
 main = do
     putStrLn greeting
-    printSecond[]
+    printSecond
