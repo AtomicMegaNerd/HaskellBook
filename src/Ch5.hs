@@ -1,3 +1,5 @@
+module Ch5 where
+
 addStuff :: Integer -> Integer -> Integer
 addStuff a b = a + b + 5
 
@@ -22,3 +24,14 @@ anonNested :: Integer
            -> Integer
 anonNested =
     \i -> \b -> i + (nonsense b)
+
+-- How many ways can we implemenet a -> a -> a
+
+roflLeft :: a -> a-> a
+roflLeft x y = x
+
+roflRight :: a -> a -> a
+roflRight x y = y
+
+roflAwesomeSauce :: a -> b -> b
+roflAwesomeSauce x y = y
