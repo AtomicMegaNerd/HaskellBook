@@ -1,6 +1,5 @@
 module Ch3Exer where
 
-exclam :: [Char] -> [Char]
 exclam s = s ++ "!"
 
 delta :: [Char] -> [Char]
