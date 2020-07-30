@@ -1,7 +1,7 @@
 module Print3 where
 
 myGreeting :: String
-myGreeting = "hello" ++ " world!" 
+myGreeting = "hello" ++ " world!"
 
 hello :: String
 hello = "hello"
@@ -9,8 +9,5 @@ hello = "hello"
 world :: String
 world = "world!"
 
-main :: IO ()
-main = do
-    putStrLn myGreeting
-    putStrLn secondGreeting
-        where secondGreeting = concat [hello, " ", world]
+secondGreeting :: [Char]
+secondGreeting = hello ++ " " ++ world

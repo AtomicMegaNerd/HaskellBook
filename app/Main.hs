@@ -1,9 +1,16 @@
 module Main where
 
-import Lib
-import Learn2
+import           Ch3Exer
+import           Lib
+import           Print3
 
 main :: IO ()
 main = do
-    let x = doubleMe 5
-    print x
+    putStrLn $ exclam "Hello"
+    putStrLn $ delta "Good-bye"
+    putStrLn $ getLastWord "Curry is awesome!"
+
+    print $ thirdLetter "H"
+    print $ thirdLetter "Hello"
+
+    putStrLn $ rvrs "This is the best day ever"

@@ -2,32 +2,20 @@ module Ch3Exer where
 
 exclam s = s ++ "!"
 
-getLastLetterInFirstWord :: [Char] -> [Char]
-getLastLetterInFirstWord s = drop (l - 1) fw
-    where l = length fw
-          fw = wds !! 0
-          wds = words s
+delta :: [Char] -> [Char]
+delta s = [s !! 4]
 
 getLastWord :: [Char] -> [Char]
-getLastWord s = w !! (length w - 1)
-    where w = words s
+getLastWord s = drop 9 s
 
-thirdLetter :: [Char] -> Char
-thirdLetter s = s !! 2
+thirdLetter :: [Char] -> Maybe Char
+thirdLetter (x : y : z : xs) = Just y
+thirdLetter _                = Nothing
 
 letterIndex :: Int -> Char
 letterIndex x = s !! x
-    where s = "Curry is awesome!"
+    where s = "Cirry is awesome!"
 
+-- Reverse our words
 rvrs :: [Char] -> [Char]
-rvrs s = unwords $ reverse wds
-    where wds = words s
-
-main :: IO ()
-main = do
-    print $ exclam "Curry is awesome"
-    print $ getLastLetterInFirstWord "Curry is awesome!"
-    print $ getLastWord "Curry is awesome!"
-    print $ thirdLetter "Curry is awesome!"
-    print $ letterIndex 5
-    print $ rvrs "Curry is awesome"
+rvrs  = unwords . reverse . words
