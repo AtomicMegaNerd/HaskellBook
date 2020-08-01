@@ -6,10 +6,13 @@ example = 1
 
 x1 = (* 9) 6
 
+-- (Num a) => (a, [Char])
 x2 = head [(0,"doge"),(1,"kitteh")]
 
+-- (Integer, [Char])
 x3 = head [(0 :: Integer ,"doge"),(1,"kitteh")]
 
+-- Bool
 x4 = if False then True else False
 
 x5 = length [1, 2, 3, 4, 5]

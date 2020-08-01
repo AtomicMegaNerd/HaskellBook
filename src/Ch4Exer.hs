@@ -1,7 +1,10 @@
 module Ch4Exer where
 
+awesome :: [[Char]]
 awesome = ["Papuchon", "curry", ":)"]
+also :: [[Char]]
 also = ["Quake", "The Simons"]
+allAwesome :: [[[Char]]]
 allAwesome = [awesome, also]
 
 isPalindrome :: (Eq a) => [a] -> Bool
