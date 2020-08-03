@@ -1,3 +1,3 @@
 # Haskell Book
 
-Current status: Starting *Type-Kwon-Do* on page 157.
+Current status: 6.6 Num on page 182

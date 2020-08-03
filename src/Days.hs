@@ -1,12 +1,18 @@
 module Days where
 
-data DayOfWeek =
-  Mon | Tue | Wed | Thu | Fri | Sat | Sun
-  deriving Show
+data DayOfWeek
+  = Mon
+  | Tue
+  | Wed
+  | Thu
+  | Fri
+  | Sat
+  | Sun
+  deriving (Show)
 
-data Date =
-  Date DayOfWeek Int
-  deriving Show
+data Date
+  = Date DayOfWeek Int
+  deriving (Show)
 
 instance Eq DayOfWeek where
   (==) Mon Mon = True
@@ -16,8 +22,8 @@ instance Eq DayOfWeek where
   (==) Fri Fri = True
   (==) Sat Sat = True
   (==) Sun Sun = True
-  (==) _ _     = False
+  (==) _ _ = False
 
 instance Eq Date where
-  (==) (Date wd1 dom1) (Date wd2 dom2) =
-    wd1 == wd2 && dom1 == dom2
+  (==) (Date weekday dayOfMonth) (Date weekday' dayOfMonth') =
+    weekday == weekday' && dayOfMonth == dayOfMonth'

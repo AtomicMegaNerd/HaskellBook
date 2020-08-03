@@ -3,53 +3,48 @@ module Ch6Exer1 where
 data TisAnInteger = TisAn Integer
   deriving (Show)
 
+xi :: TisAnInteger
+xi = (TisAn 5)
+
+yi :: TisAnInteger
+yi = (TisAn 6)
+
 instance Eq TisAnInteger where
-  (==) (TisAn x) (TisAn y) = x == y
+  (==) (TisAn x) (TisAn x') = (x == x')
 
 data TwoIntegers = Two Integer Integer
   deriving (Show)
 
 instance Eq TwoIntegers where
-  (==) (Two x1 y1) (Two x2 y2) = x1 == x2 && y1 == y2
+  (==) (Two x y) (Two x' y') = x == x' && y == y'
 
-data StringOrInt
-  = TisAnInt Int
-  | TisAString String
-  deriving (Show)
+data StringOrInt = TisAnInt Int | TisAString String deriving (Show)
 
 instance Eq StringOrInt where
-  (==) (TisAnInt i1) (TisAnInt i2) = i1 == i2
-  (==) (TisAString s1) (TisAString s2) = s1 == s2
+  (==) (TisAnInt x) (TisAnInt x') = x == x'
+  (==) (TisAString x) (TisAString x') = x == x'
   (==) _ _ = False
 
-data Pair a = Pair a a
-  deriving (Show)
+data Pair a = Pair a a deriving (Show)
 
-instance (Eq a) => Eq (Pair a) where
-  (==) a b = a == b
+instance Eq a => Eq (Pair a) where
+  (==) (Pair x y) (Pair x' y') = x == x' && y == y'
 
-data Tuple a b = Tuple a b
-  deriving (Show)
+data Tuple a b = Tuple a b deriving (Show)
 
 instance (Eq a, Eq b) => Eq (Tuple a b) where
-  (==) (Tuple a1 b1) (Tuple a2 b2) = a1 == a2 && b1 == b2
+  (==) (Tuple x y) (Tuple x' y') = x == x' && y == y'
 
-data Which a
-  = ThisOne a
-  | ThatOne a
-  deriving (Show)
+data Which a = ThisOne a | ThatOne a deriving (Show)
 
-instance (Eq a) => Eq (Which a) where
-  (==) (ThisOne a1) (ThisOne a2) = a1 == a2
-  (==) (ThatOne a1) (ThatOne a2) = a1 == a2
+instance Eq a => Eq (Which a) where
+  (==) (ThisOne a) (ThisOne a') = a == a'
+  (==) (ThatOne a) (ThatOne a') = a == a'
   (==) _ _ = False
 
-data EitherOr a b
-  = Hello a
-  | Goodbye b
-  deriving (Show)
+data EitherOr a b = Hello a | Goodbye b deriving (Show)
 
 instance (Eq a, Eq b) => Eq (EitherOr a b) where
-  (==) (Hello a1) (Hello a2) = a1 == a2
-  (==) (Goodbye b1) (Goodbye b2) = b1 == b2
+  (==) (Hello a) (Hello a') = a == a'
+  (==) (Goodbye b) (Goodbye b') = b == b'
   (==) _ _ = False
