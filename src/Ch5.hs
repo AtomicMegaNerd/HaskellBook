@@ -13,7 +13,7 @@ rcd_sub :: (Num a) => a -> a -> a
 rcd_sub x y = x - y
 
 nonsense :: Bool -> Integer
-nonsense True  = 805
+nonsense True = 805
 nonsense False = 31337
 
 curriedFunction :: Integer -> Bool -> Integer

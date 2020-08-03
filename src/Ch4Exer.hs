@@ -2,8 +2,10 @@ module Ch4Exer where
 
 awesome :: [[Char]]
 awesome = ["Papuchon", "curry", ":)"]
+
 also :: [[Char]]
 also = ["Quake", "The Simons"]
+
 allAwesome :: [[[Char]]]
 allAwesome = [awesome, also]
 
@@ -13,8 +15,8 @@ isPalindrome xs = reverse xs == xs
 
 rcdAbs :: Integer -> Integer
 rcdAbs x
-    | x < 0 = negate x
-    | otherwise = x
+  | x < 0 = negate x
+  | otherwise = x
 
 rcdAbs' :: Integer -> Integer
 rcdAbs' x = if x < 0 then negate x else x
@@ -26,7 +28,8 @@ x = (+)
 
 f' :: Foldable t => t a -> Int
 f' xs = w `x` 1
-    where w = length xs
+  where
+    w = length xs
 
 f'' = (\x -> x)
 
