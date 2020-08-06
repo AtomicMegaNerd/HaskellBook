@@ -1,3 +1,3 @@
 # Haskell Book
 
-Current status: 6.6 Num on page 182
+Current status: 7.4 Pattern Matching on page 230

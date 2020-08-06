@@ -8,7 +8,7 @@ data DayOfWeek
   | Fri
   | Sat
   | Sun
-  deriving (Show)
+  deriving (Ord, Show)
 
 data Date
   = Date DayOfWeek Int
