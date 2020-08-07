@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Ch5, Ch5Exer, Days, Ch6Exer1, Ch6, RegisteredUser
+  exposed-modules:     Ch7Exer2, Ch7Exer3
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 

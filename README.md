@@ -1,3 +1,3 @@
 # Haskell Book
 
-Current status: 7.4 Pattern Matching on page 233
+Current status: 7.7 Guards at page 249
