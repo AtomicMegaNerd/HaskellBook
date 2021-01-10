@@ -23,13 +23,11 @@ data Pair a = Pair a a
 
 instance Eq a => Eq (Pair a) where
   (==) (Pair x y) (Pair x' y') = x == x' && y == y'
-  (==) _ _ = False
 
 data Tuple a b = Tuple a Bool
 
 instance (Eq a, Eq b) => Eq (Tuple a b) where
   (==) (Tuple x y) (Tuple x' y') = x == x' && y == y'
-  (==) _ _ = False
 
 data Which a = ThisOne a | ThatOne a
 
