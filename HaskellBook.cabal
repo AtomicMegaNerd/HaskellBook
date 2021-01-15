@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Ch6, Ch6EqExer1
+  exposed-modules:     Ch6, Ch6EqExer1, Ch6ChExers
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
