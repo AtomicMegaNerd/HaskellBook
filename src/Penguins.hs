@@ -32,3 +32,7 @@ galapagos = Peng Galapagos
 
 addTupleTerms :: Num a => (a, a, a, a) -> a
 addTupleTerms (w, x, y, z) = w + x + y + z
+
+k (x, y) = x
+
+k2 = k ("three", (1 + 2))

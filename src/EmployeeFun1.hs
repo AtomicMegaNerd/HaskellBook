@@ -1,6 +1,11 @@
 module EmployeeFun1 where
 
-data Employee = Coder | Manager | Veep | CEO deriving (Eq, Ord, Show)
+data Employee
+  = Coder
+  | Manager
+  | Veep
+  | CEO
+  deriving (Eq, Ord, Show)
 
 reportBoss :: Employee -> Employee -> IO ()
 reportBoss e1 e2 = putStrLn $ show e1 ++ " is the boss of " ++ show e2
