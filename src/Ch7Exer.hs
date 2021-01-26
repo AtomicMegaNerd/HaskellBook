@@ -22,3 +22,48 @@ nums x = case compare x 0 of
 -- -> is right associative
 returnLast' :: a -> (b -> (c -> (d -> d)))
 returnLast' _ _ _ d = d
+
+-- Chapter Exercises
+-- ===================
+
+-- Let's write code
+-- 1.
+
+tensDigit :: Integral a => a -> a
+tensDigit x = d
+  where
+    xLast = x `div` 10
+    d = xLast `mod` 10
+
+tensDigit' :: Integral a => a -> a
+tensDigit' x = res
+  where
+    res = rem (fst d) 10
+    d = divMod x 10
+
+hunsDigit :: Integral a => a -> a
+hunsDigit x = res
+  where
+    res = rem (fst d) 10
+    d = divMod x 100
+
+-- 2.
+
+foldBool :: a -> a -> Bool -> a
+foldBool x y z = case z of
+  True -> y
+  False -> x
+
+foldBool2 :: a -> a -> Bool -> a
+foldBool2 x y z
+  | z == True = x
+  | z == False = y
+
+foldBool3 :: a -> a -> Bool -> a
+foldBool3 x _ False = x
+foldBool3 _ y True = y
+
+-- 3.
+
+g :: (a -> b) -> (a, c) -> (b, c)
+g f (a, c) = (f a, c)

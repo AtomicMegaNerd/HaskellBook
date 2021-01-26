@@ -35,3 +35,30 @@ dogYears x
   | x <= 2 = x * 12
   | x <= 4 = x * 8
   | otherwise = x * 6
+
+avgGrade :: (Fractional a, Ord a) => a -> Char
+avgGrade x
+  | y >= 0.9 = 'A'
+  | y >= 0.8 = 'B'
+  | y >= 0.7 = 'C'
+  | y >= 0.59 = 'D'
+  | y < 0.59 = 'F'
+  where
+    y = x / 100
+
+pal :: Eq a => [a] -> Bool
+pal xs
+  | xs == reverse xs = True
+  | otherwise = False
+
+numbers :: (Ord a, Num a, Num p) => a -> p
+numbers x
+  | x < 0 = -1
+  | x == 0 = 1
+  | x > 0 = 1
+
+f :: Int -> [Int] -> Int
+f z xs = foldr (+) z xs
+
+f' :: Int -> [Int] -> Int
+f' = foldr (+)
