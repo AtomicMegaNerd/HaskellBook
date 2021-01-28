@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7a085d94ce86d9419fef1bec48c863f7565a552e74493f62dd44a34121054065
+-- hash: 2cb474e36aafb186e1f3f4de1cb16889474d6ad4d928f08a0a4c7b4a691d0cc2
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -41,6 +41,7 @@ library
       Ch6EqExer1
       Ch7Exer
       Ch7GrabBag
+      Ch8RecursiveFun
       Days
       DetermineTheType
       EmployeeFun1
