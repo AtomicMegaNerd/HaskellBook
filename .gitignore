@@ -1,3 +1,2 @@
-.stack-work
-dist
-.vscode
+.stack-work/
+*~

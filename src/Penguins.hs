@@ -1,3 +1,5 @@
+module Penguins where
+
 data WherePenguinsLive
   = Galapagos
   | Antarctica

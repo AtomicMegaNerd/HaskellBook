@@ -1,43 +1,98 @@
-name:                HaskellBook
-version:             0.1.0.0
-synopsis:            Initial project template from stack
-description:         Please see README.md
-homepage:            https://github.com/githubuser/HaskellBook#readme
-license:             BSD3
-license-file:        LICENSE
-author:              Chris Dunphy
-maintainer:          chris@megaparsec.ca
-copyright:           2021 Chris Dunphy
-category:            Web
-build-type:          Simple
-extra-source-files:  README.md
-cabal-version:       >=1.10
+cabal-version: 1.12
 
-library
-  hs-source-dirs:      src
-  exposed-modules:     Ch7Exer
-  ghc-options:         -Wall
-  build-depends:       base >= 4.7 && < 5
-  default-language:    Haskell2010
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: f3ee6a00e242b62eb15927a2352fcf94331ea36f8ab531d2d84545595e6c5700
 
-executable HaskellBook-exe
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , scientific
-                     , HaskellBook
-  default-language:    Haskell2010
-
-test-suite HaskellBook-test
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
-  build-depends:       base
-                     , HaskellBook
-  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
-  default-language:    Haskell2010
+name:           HaskellBook
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/HaskellBook#readme>
+homepage:       https://github.com/githubuser/HaskellBook#readme
+bug-reports:    https://github.com/githubuser/HaskellBook/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
 
 source-repository head
-  type:     git
+  type: git
   location: https://github.com/githubuser/HaskellBook
+
+library
+  exposed-modules:
+      Arith2
+      Arith3Broken
+      Arith4
+      Case1
+      Ch3Exer
+      Ch4
+      Ch4Exer
+      Ch5
+      Ch5Exer
+      Ch6
+      Ch6ChExers
+      Ch6EqExer1
+      Ch7Exer
+      Ch7GrabBag
+      Days
+      DetermineTheType
+      EmployeeFun1
+      Factorial
+      Guards1
+      HigherOrder
+      Learn
+      Learn2
+      Lib
+      MoodModule
+      PatternMatching1
+      Penguins
+      Print1
+      Print2
+      Print3
+      Print3Broken
+      Print3Flipped
+      RcdId
+      RegisteredUser
+      Reverse
+      Sing
+      Triv
+      TypeInference1
+  other-modules:
+      Paths_HaskellBook
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable HaskellBook-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_HaskellBook
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellBook
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite HaskellBook-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_HaskellBook
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellBook
+    , base >=4.7 && <5
+  default-language: Haskell2010
