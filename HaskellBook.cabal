@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2cb474e36aafb186e1f3f4de1cb16889474d6ad4d928f08a0a4c7b4a691d0cc2
+-- hash: d1f8cb15fbfcc1511e5d623ce495cc2345b1cebdecc019e939160e821ba9a85f
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       Arith2
       Arith3Broken
       Arith4
+      BabyMaybe
       Case1
       Ch3Exer
       Ch4
@@ -41,11 +42,13 @@ library
       Ch6EqExer1
       Ch7Exer
       Ch7GrabBag
+      Ch8Exers
       Ch8RecursiveFun
       Days
       DetermineTheType
       EmployeeFun1
       Factorial
+      Fibonacci
       Guards1
       HigherOrder
       Learn
