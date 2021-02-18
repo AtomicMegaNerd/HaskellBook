@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d1f8cb15fbfcc1511e5d623ce495cc2345b1cebdecc019e939160e821ba9a85f
+-- hash: 8c0bacc188ad098e1b96597ecedfc82aa4616d43e3a9da3a3a5422e9ab92f206
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -30,7 +30,6 @@ library
       Arith2
       Arith3Broken
       Arith4
-      BabyMaybe
       Case1
       Ch3Exer
       Ch4
@@ -68,6 +67,7 @@ library
       Sing
       Triv
       TypeInference1
+      WordNumber
   other-modules:
       Paths_HaskellBook
   hs-source-dirs:

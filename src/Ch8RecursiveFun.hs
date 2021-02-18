@@ -31,3 +31,8 @@ dividedByWithR num denom = go num denom 0
     go n d count
       | n < d = (count, n)
       | otherwise = go (n - d) d (count + 1)
+
+mc91 :: (Ord p, Num p) => p -> p
+mc91 x
+  | x > 100 = x - 10
+  | otherwise = mc91 $ mc91 $ x + 11
