@@ -1,19 +1,13 @@
 module Main where
 
-import WordNumber
+import Ch9ListEnumFun
 
 main :: IO ()
 main = do
-  let l = digits 134564
-  mapM_ print l
+  let xs = eftChar 'a' 'd'
+  print xs
 
-  let r = wordNumber 134564
-  print r
-
-  let r' = wordNumber' 134564
-  print r'
-
-  let r'' = wordNumber'' 134564
-  print r''
+  let xs' = eftInt 1 9
+  print xs'
 
   putStrLn "Program complete"

@@ -5,5 +5,5 @@ roundTrip = read . show
 
 main :: IO ()
 main = do
-  print (roundTrip 4 :: Integer)
-  print (id 4)
+  print (roundTrip (4 :: Integer) :: Integer)
+  print (id 4 :: Integer)
