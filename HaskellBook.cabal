@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f45751b150fd1f5e6b8803489c82103598ac90150bee9d78aa1c7b01374ad592
+-- hash: 783b8bf065dcb4b73f73f9aa5b6e1dc38c1b245fe67e28bb477b29fdfc1fbcd2
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -56,8 +56,10 @@ library
       Learn2
       Lib
       MoodModule
+      MyWords
       PatternMatching1
       Penguins
+      PoemLines
       Print1
       Print2
       Print3
@@ -67,6 +69,7 @@ library
       RegisteredUser
       Reverse
       Sing
+      SplitBy
       Triv
       TypeInference1
       WordNumber

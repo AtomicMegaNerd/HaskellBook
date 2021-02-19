@@ -1,13 +1,16 @@
 module Main where
 
-import Ch9ListEnumFun
+import MyWords (myWords')
+import PoemLines (myLines, myLines', sentences, shouldEqual)
 
 main :: IO ()
 main = do
-  let xs = eftChar 'a' 'd'
-  print xs
+  let s = "Chris loves to code in Haskell"
+  let w = myWords' s
+  putStrLn s
+  print w
 
-  let xs' = eftInt 1 9
-  print xs'
+  print $ "Are they equal? " ++ show (myLines sentences == shouldEqual)
+  print $ "Are they equal? " ++ show (myLines' sentences == shouldEqual)
 
-  putStrLn "Program complete"
+  putStrLn "Program complete..."
