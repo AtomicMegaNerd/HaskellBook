@@ -13,17 +13,18 @@ x2 = head [(0, "doge"), (1, "kitteh")]
 x3 = head [(0 :: Integer, "doge"), (1, "kitteh")]
 
 -- Bool
-x4 = if False then True else False
+x4 = False
 
 x5 = length [1, 2, 3, 4, 5]
 
-x6 = (length [1, 2, 3, 4]) > (length "TACOCAT")
+x6 :: Bool
+x6 = length [1, 2, 3, 4] > length "TACOCAT"
 
 x = 5
 
 y = x + 5
-w = y * 10
 
+w = y * 10
 
 x' = 5
 
@@ -34,13 +35,13 @@ z y' = y' * 10
 x'' = 5
 
 y'' = x'' + 5
-f'' = 4 / y
 
+f'' = 4 / y
 
 xa = "Julie"
 
 ya = " <3 "
-za = "Haskell"
 
+za = "Haskell"
 
 fa = xa ++ ya ++ za
