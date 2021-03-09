@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cc56b121a096d71fd9567eee1841d0905b5a921bb9ad8f3e889b2bbf5e8e5563
+-- hash: d4679827dd8b8aad394b3f7d1ff0666975ae8b9c776a1a4ce4795b45bf80c90a
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -43,7 +43,9 @@ library
       Ch7GrabBag
       Ch8Exers
       Ch8RecursiveFun
+      Ch9Exers
       Ch9FunWithLists
+      Ch9ListCompr
       Ch9ListEnumFun
       Days
       DetermineTheType

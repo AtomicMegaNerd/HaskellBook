@@ -1,16 +1,9 @@
 module Main where
 
-import MyWords (myWords')
-import PoemLines (myLines, myLines', sentences, shouldEqual)
+import Ch9ListCompr
 
 main :: IO ()
 main = do
-  let s = "Chris loves to code in Haskell"
-  let w = myWords' s
-  putStrLn s
-  print w
-
-  print $ "Are they equal? " ++ show (myLines sentences == shouldEqual)
-  print $ "Are they equal? " ++ show (myLines' sentences == shouldEqual)
-
+  let s1 = "Pants AdministratioN and Tracking System"
+  putStrLn $ removeAllLower s1
   putStrLn "Program complete..."
