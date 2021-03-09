@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f120cca99234292f9afad34be2792ea6eca1c980b34a240fa29a78730e16c49c
+-- hash: 0efaf0d98e0e4ad16aad6419827f5b45ad35d405619967d6bf8dc4c14e764e49
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -44,6 +44,7 @@ library
       Ch8Exers
       Ch8RecursiveFun
       Ch9Exers
+      Ch9FinalExers
       Ch9FunWithLists
       Ch9ListCompExer1
       Ch9ListCompr
