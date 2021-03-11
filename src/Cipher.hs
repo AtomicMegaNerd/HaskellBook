@@ -18,9 +18,8 @@ caesar o (x : xs) = shift : caesar o xs
       | isLower x && (ix - ord 'a') >= 26 = chr (ix - 26)
       | isUpper x && (ix - ord 'A') >= 26 = chr (ix - 26)
       | isLetter x = chr ix
-      | otherwise = x
-    ix = ord x + offset
-    offset = o `mod` 26
+      | otherwise = x -- punctuation and spaces
+    ix = ord x + o `mod` 26
 
 -- This de-scrambles the caesar cipher as long as the offest argument passed into
 -- this function matches the offest passed in to the uncasar function.
