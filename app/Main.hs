@@ -1,26 +1,20 @@
 module Main where
 
-import Cipher (caesar, uncaesar)
+import Ch10DbProc
 
 main :: IO ()
 main = do
-  let offset = 5
+  let ilist = filterDbNumber theDatabase
 
-  let m1 = "AbC"
-  let m2 = "XYz"
+  print ilist
 
-  let m3 = "This is a fun sentence.  Hello world!"
+  let mostRecentDate = mostRecent theDatabase
+  print mostRecentDate
 
-  let c1 = caesar offset m1
-  let c2 = caesar offset m2
-  let c3 = caesar offset m3
+  let sum = sumDb theDatabase
+  print sum
 
-  print c1
-  print c2
-  print c3
-
-  let d1 = uncaesar offset c3
-
-  print d1
+  let avg = avgDb theDatabase
+  print avg
 
   putStrLn "Program complete"
