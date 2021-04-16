@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b0eb0d6bd3ebc09ec644964bed20ae6c91da3e7592a9f5449d4da1184f584260
+-- hash: b17d195721dee43fd5f09c684d39fe3f6fa21efdc61e8503f3f7c5d85bb356b2
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -32,7 +32,9 @@ library
       Arith4
       Case1
       Ch10DbProc
+      Ch10FibFun1
       Ch10FoldFun1
+      Ch10WarmupExercises
       Ch3Exer
       Ch4
       Ch4Exer
