@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a3fe69349a990803b4fb2c6509b25a797521408341b30478de23b5157dd17fe1
+-- hash: 2b7547290e508c2bc09a6b3eb92f0c91b2dfcd11e4f8eca0c5dbd8d3aca2a6e6
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -36,6 +36,7 @@ library
       Ch10FibFun1
       Ch10FoldFun1
       Ch10WarmupExercises
+      Ch11Fun1
       Ch3Exer
       Ch4
       Ch4Exer
@@ -61,6 +62,8 @@ library
       EmployeeFun1
       Factorial
       Fibonacci
+      FunWithBool
+      FunWithNewType
       Guards1
       HigherOrder
       Learn
@@ -77,12 +80,14 @@ library
       Print3Broken
       Print3Flipped
       RcdId
+      Records
       RegisteredUser
       Reverse
       Sing
       SplitBy
       Triv
       TypeInference1
+      VehicleFun1
       WordNumber
   other-modules:
       Paths_HaskellBook

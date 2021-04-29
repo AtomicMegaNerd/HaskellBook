@@ -2,9 +2,9 @@ module Ch6ChExers where
 
 import Data.List
 
-data Person = Person Bool deriving (Show)
+data Person6 = Person6 Bool deriving (Show)
 
-printPerson :: Person -> IO ()
+printPerson :: Person6 -> IO ()
 printPerson person = putStrLn (show person)
 
 data Mood = Blah | Woot deriving (Show, Eq, Ord)

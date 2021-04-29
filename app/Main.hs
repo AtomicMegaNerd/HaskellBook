@@ -1,14 +1,10 @@
 module Main where
 
-import Ch10WarmupExercises
+import Ch11Fun1
 
 main :: IO ()
 main = do
-  print makeAllCombinationsOfStopsAndVowels
-  putStrLn "---"
-  print makeAllCombinationsOfStopsAndVowelsThatStartWithP
-  putStrLn "---"
-  print makeAllCombinationsOfNounsAndVerbs
-  putStrLn "---"
-
+  -- Makwa is the cutest dog name ever
+  let makwa = Schnoodle "Makwa"
+  print $ printDogName makwa
   putStrLn "Program complete"
