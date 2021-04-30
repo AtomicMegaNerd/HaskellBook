@@ -1,10 +1,10 @@
 module Main where
 
-import Ch11Fun1
+import Ch11GuessWhat
 
 main :: IO ()
 main = do
-  -- Makwa is the cutest dog name ever
-  let makwa = Schnoodle "Makwa"
-  print $ printDogName makwa
-  putStrLn "Program complete"
+  let bess' = (CowInfo "Bess" 4)
+  let bess = First bess' :: Animal'
+
+  putStrLn "Program Complete"
