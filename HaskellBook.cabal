@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2b7547290e508c2bc09a6b3eb92f0c91b2dfcd11e4f8eca0c5dbd8d3aca2a6e6
+-- hash: ef0858be28af50edc430b41c9806bdc1ef56a540518868dc9219d1df23427216
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -57,6 +57,7 @@ library
       Ch9ListCompr
       Ch9ListEnumFun
       Cipher
+      DataTypesNormalForm
       Days
       DetermineTheType
       EmployeeFun1
