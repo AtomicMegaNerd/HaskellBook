@@ -2,6 +2,7 @@ module Ch11GuessWhat where
 
 data GuessWhat = ChickenButt deriving (Eq, Show)
 
+-- The book does not use newtype here so will ignore the suggestion of the linter
 data Id a = MkId a deriving (Eq, Show)
 
 data Product a b = Product a b deriving (Eq, Show)
