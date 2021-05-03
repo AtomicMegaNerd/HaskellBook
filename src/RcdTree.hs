@@ -56,3 +56,12 @@ testPostorder =
   if postorder testTree == [1, 3, 2]
     then putStrLn "Postorder pass"
     else putStrLn "Postorder fail"
+
+foldTree :: (a -> b -> b) -> b -> RCDTree a -> b
+foldTree f acc t = foldr f acc $ inorder t
+
+-- This was extremely tricky... had to cheat on this one sadly
+-- https://medium.com/scientific-breakthrough-of-the-afternoon/catamorphism-for-binary-trees-in-haskell-3ac4acada63b
+foldTree' :: (a -> b -> b) -> b -> RCDTree a -> b
+foldTree' f acc Leaf = acc
+foldTree' f acc (Node left x right) = foldTree' f (f x (foldTree' f acc left)) right
