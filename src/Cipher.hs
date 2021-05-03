@@ -43,21 +43,24 @@ uncaesar offset = caesar (- offset)
 -- Arguments:
 -- ==========
 --
+-- mode - This is either set to Encrypt or Decrypt.
+--
 -- keyword - the word to use as the cipher.  Each letter of the keyword indicates how many
 -- right shifts will be applied to the next character in the text.
 --
 -- text - The text to be encrypted.
 
-vigenere :: [Char] -> [Char] -> [Char]
-vigenere keyword = encrypt shiftMask
+data Mode = Encrypt | Decrypt deriving (Eq, Show)
+
+vigenere :: Mode -> [Char] -> [Char] -> [Char]
+vigenere mode keyword = encrypt mode shiftMask
   where
     shiftMask = cycle keyword -- This repeats infintely but Haskell is lazy
-    encrypt _ [] = []
-    encrypt (k : ks) (x : xs)
-      -- Only consume a letter from our shiftMask if the character in the text being
-      -- encrypted is a letter.  Don't bother scrambling punctuation.
-      | isLetter x = shift ix x : encrypt ks xs
-      | otherwise = x : encrypt (k : ks) xs -- Put k back so we can use it on the next letter
+    encrypt _ _ [] = []
+    encrypt mode (k : ks) (x : xs)
+      | isLetter x && mode == Encrypt = shift ix x : encrypt mode ks xs
+      | isLetter x && mode == Decrypt = shift (- ix) x : encrypt mode ks xs
+      | otherwise = x : encrypt mode (k : ks) xs -- Put k back so we can use it on the next letter
       where
         ix
           -- Here we know that k must be a letter so we can assume in the otherwise
