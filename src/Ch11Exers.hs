@@ -40,23 +40,23 @@ splitStringByChar :: Char -> String -> [String]
 splitStringByChar _ [] = []
 splitStringByChar ch sent = fst res : splitStringByChar ch (snd res)
   where
-    res:: (String, String)
+    res :: (String, String)
     res = mkWord sent
-    mkWord :: String -> (String, String) 
-    mkWord sent = mkWordInner sent ([],[])
+    mkWord :: String -> (String, String)
+    mkWord sent = mkWordInner sent ([], [])
       where
         mkWordInner :: String -> (String, String) -> (String, String)
         mkWordInner [] buffer = buffer
-        mkWordInner (x:xs) (word, _)
+        mkWordInner (x : xs) (word, _)
           | x == ch = (word, xs)
           | otherwise = mkWordInner xs (word ++ [x], xs)
 
-joinStringsByChar :: Char -> [String] -> String 
+joinStringsByChar :: Char -> [String] -> String
 joinStringsByChar ch stringList = joinInner stringList []
   where
     joinInner :: [String] -> String -> String
     joinInner [] buffer = buffer
-    joinInner (x:xs) buffer = x ++ [ch] ++ joinInner xs buffer
+    joinInner (x : xs) buffer = x ++ [ch] ++ joinInner xs buffer
 
 -- I can use my splitStringByChar function to define my own version of the words function.
 rcdWords :: String -> [String]
@@ -65,33 +65,32 @@ rcdWords = splitStringByChar ' '
 splitSentences :: String -> [String]
 splitSentences = splitStringByChar '.'
 
-joinSentences :: [String] -> String 
+joinSentences :: [String] -> String
 joinSentences = joinStringsByChar '.'
 
 -- This function capitalizes the first letter of every word.
-capitalizeWord :: String -> String 
+capitalizeWord :: String -> String
 capitalizeWord [] = []
-capitalizeWord (x:xs) = toUpper x : xs
+capitalizeWord (x : xs) = toUpper x : xs
 
--- This function splits a sentence into words and returns a tuple of each word both 
+-- This function splits a sentence into words and returns a tuple of each word both
 -- capitalized and not capitalized.
 capitalizeWords :: String -> [(String, String)]
 capitalizeWords sent = map cAndT (rcdWords sent)
   where
     cAndT :: String -> (String, String)
-    cAndT orig@(x:xs) = (orig, toUpper x : xs)
+    cAndT orig@(x : xs) = (orig, toUpper x : xs)
 
 -- This function will capitalize the first word in each sentence in a paragraph.  This is really
 -- ugly because we have to account for spaces.
-capitalizeParagraph :: String -> String 
+capitalizeParagraph :: String -> String
 capitalizeParagraph = joinSentences . map capitalizeFirstLetterInAString . splitSentences
   where
     capitalizeFirstLetterInAString :: String -> String
-    capitalizeFirstLetterInAString s = inner s []
+    capitalizeFirstLetterInAString s = cflInner s []
       where
-        inner :: String -> String -> String
-        inner [] buffer = buffer
-        inner orig@(x:xs) buffer
+        cflInner :: String -> String -> String
+        cflInner [] buffer = buffer
+        cflInner orig@(x : xs) buffer
           | isLetter x = buffer ++ capitalizeWord orig
-          | otherwise = inner xs (x:buffer)
-
+          | otherwise = cflInner xs (x : buffer)
