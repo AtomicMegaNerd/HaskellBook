@@ -1,16 +1,14 @@
 module Main where
 
-import Cipher
+import PhonePad
 
 main :: IO ()
-main = do
-  let keyword = "ALLY"
-  let sourceText = "MEET AT DAWN"
+main =
+  do
+    let roflstar = reverseConvo phone convo
+    print roflstar
 
-  let encryptedText = vigenere Encrypt keyword sourceText
-  let decryptedText = vigenere Decrypt keyword encryptedText
+    let numPresses = digitPresses roflstar
+    print numPresses
 
-  putStrLn encryptedText
-  putStrLn decryptedText
-
-  putStrLn "Program Complete"
+    putStrLn "Program Complete"

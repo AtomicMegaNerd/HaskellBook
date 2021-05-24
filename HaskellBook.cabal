@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: eb404d02ef4bfdee549d2c2c4100ec50bf1ccb88f64fd73c9c8b4331c72adba5
+-- hash: 3f5c9db1a19b9a797ef348c4fdb8fe63791966ae24ee32032c610b271078b36a
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -79,6 +79,7 @@ library
       MyWords
       PatternMatching1
       Penguins
+      PhonePad
       PoemLines
       Print1
       Print2
