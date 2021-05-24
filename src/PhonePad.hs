@@ -33,10 +33,10 @@ convo :: [String]
 convo = ["Wanna play 20 questions", "Ya", "U 1st haha", "Lol OK.  Have you ever tasted pepsi"]
 
 reverseConvo :: Phone -> [String] -> [(Digit, Presses)]
-reverseConvo p = foldr ((++) . reverseStr p) []
+reverseConvo = concatMap . reverseStr
 
 reverseStr :: Phone -> String -> [(Digit, Presses)]
-reverseStr p = foldr ((++) . reverseTaps p) []
+reverseStr = concatMap . reverseTaps
 
 reverseTaps :: Phone -> Char -> [(Digit, Presses)]
 reverseTaps ph ch
