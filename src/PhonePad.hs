@@ -1,7 +1,7 @@
 module PhonePad where
 
-import Data.Char (isUpper, toLower)
-import Data.List (elemIndex)
+import Data.Char (isUpper, toLower, isLetter)
+import Data.List (elemIndex, nub)
 import Data.Maybe (fromJust)
 
 type Key = (Digit, String)
@@ -52,5 +52,32 @@ reverseTap (Phone keys) ch = tap keys ch
       | ch `elem` snd x = (fst x, fromJust (ch `elemIndex` snd x) + 1)
       | otherwise = tap xs ch
 
-digitPresses :: [(Digit, Presses)] -> Presses
-digitPresses = foldr ((+) . snd) 0
+-- How many times do digits need to be pressed for each message
+fingerTaps :: [(Digit, Presses)] -> Presses
+fingerTaps = foldr ((+) . snd) 0
+
+charCost :: Phone -> Char -> Presses
+charCost ph ch = fingerTaps (reverseTaps ph ch)
+
+messageCost :: Phone -> String -> Presses
+messageCost ph = foldr ((+) . charCost ph) 0
+
+countElemOccurs :: (Eq a, Ord a) => a -> [a] -> Int
+countElemOccurs ch = foldr ((+) . (\elem -> if elem == ch then 1 else 0)) 0
+
+countElemsInListOccurs :: (Eq a, Ord a) => [a] -> [(a, Int)]
+countElemsInListOccurs s = concatMap (\ch -> [(ch, countElemOccurs ch s)]) $ nub s
+
+mostPopItem :: (Eq a, Ord a) => [a] -> (a, Int) -> (a, Int)
+mostPopItem s init = foldr
+  (\(ch, count) (maxCh, max) -> if count > max then (ch, count) else (maxCh, max)) 
+  init $ countElemsInListOccurs s
+
+mostPopularLetter :: String -> Char
+mostPopularLetter s = fst $ mostPopItem s (' ', 0)
+
+mostPopularWord :: [String] -> String
+mostPopularWord s = fst $ mostPopItem s (" ", 0)
+
+coolestLtr :: [String] -> Char
+coolestLtr = mostPopularLetter . unwords

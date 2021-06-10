@@ -8,7 +8,17 @@ main =
     let roflstar = reverseConvo phone convo
     print roflstar
 
-    let numPresses = digitPresses roflstar
+    let numPresses = fingerTaps roflstar
     print numPresses
+
+    let testSentence1 = "Hello"
+    let charCounts = countElemsInListOccurs testSentence1
+    let mostPopular = mostPopularLetter testSentence1
+
+    print charCounts
+    print mostPopular
+
+    let coolest = coolestLtr convo 
+    print coolest
 
     putStrLn "Program Complete"

@@ -36,7 +36,7 @@ mostRecent :: [DatabaseItem] -> UTCTime
 mostRecent = foldr (\a b -> if a > b then a else b) (UTCTime (fromGregorian 1800 1 1) (secondsToDiffTime 0)) . filterDbDate
 
 sumDb :: [DatabaseItem] -> Integer
-sumDb = foldr (+) 0 . filterDbNumber -- Using fold here for the exercise
+sumDb = sum . filterDbNumber -- Using fold here for the exercise
 
 avgDb :: [DatabaseItem] -> Double
 avgDb xs = fromIntegral (sumDb xs) / fromIntegral (length (filterDbNumber xs))

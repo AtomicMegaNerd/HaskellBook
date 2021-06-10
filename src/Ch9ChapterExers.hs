@@ -2,17 +2,17 @@ module Ch9ChapterExers where
 
 import Data.Char (isUpper, toUpper)
 
-rcdStrFilterIsUpper :: [Char] -> [Char]
+rcdStrFilterIsUpper :: String -> String
 rcdStrFilterIsUpper = filter isUpper
 
-rcdCapFirstLetter :: [Char] -> [Char]
+rcdCapFirstLetter :: String -> String
 rcdCapFirstLetter [] = []
 rcdCapFirstLetter (x : xs) = toUpper x : xs
 
-rcdStrToUpper :: [Char] -> [Char]
+rcdStrToUpper :: String -> String
 rcdStrToUpper = map toUpper
 
-rcdFirstLetterOnly :: [Char] -> Maybe Char
+rcdFirstLetterOnly :: String -> Maybe Char
 rcdFirstLetterOnly [] = Nothing
 rcdFirstLetterOnly xs = Just (toUpper $ head xs)
 
@@ -39,8 +39,7 @@ myReverse [] = []
 myReverse (x : xs) = myReverse xs ++ [x]
 
 squish :: [[a]] -> [a]
-squish [] = []
-squish (x : xs) = x ++ squish xs
+squish = concat
 
 squishMap :: (a -> [b]) -> [a] -> [b]
 squishMap _ [] = []

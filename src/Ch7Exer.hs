@@ -4,14 +4,10 @@ f1 :: (a, b, c) -> (d, e, f) -> ((a, d), (c, f))
 f1 (a, _b, c) (d, _e, f) = ((a, d), (c, f))
 
 functionC :: Ord p => p -> p -> p
-functionC x y = case x > y of
-  True -> x
-  False -> y
+functionC x y = if x > y then x else y
 
 ifEvenAdd2 :: Integral p => p -> p
-ifEvenAdd2 n = case even n of
-  True -> (n + 2)
-  False -> n
+ifEvenAdd2 n = if even n then n + 2 else n
 
 nums :: (Ord a, Num a, Num p) => a -> p
 nums x = case compare x 0 of
@@ -50,14 +46,12 @@ hunsDigit x = res
 -- 2.
 
 foldBool :: a -> a -> Bool -> a
-foldBool x y z = case z of
-  True -> y
-  False -> x
+foldBool x y z = if z then y else x
 
 foldBool2 :: a -> a -> Bool -> a
 foldBool2 x y z
-  | z == True = x
-  | z == False = y
+  | z = x
+  | not z = y
 
 foldBool3 :: a -> a -> Bool -> a
 foldBool3 x _ False = x
