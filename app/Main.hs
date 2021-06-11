@@ -21,4 +21,7 @@ main =
     let coolest = coolestLtr convo 
     print coolest
 
+    let coolestW = coolestWord convo 
+    print coolestW
+
     putStrLn "Program Complete"

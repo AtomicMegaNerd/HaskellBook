@@ -1,7 +1,7 @@
 module PhonePad where
 
 import Data.Char (isUpper, toLower, isLetter)
-import Data.List (elemIndex, nub)
+import Data.List (elemIndex, nub, intercalate)
 import Data.Maybe (fromJust)
 
 type Key = (Digit, String)
@@ -30,7 +30,7 @@ type Digit = Char
 type Presses = Int
 
 convo :: [String]
-convo = ["Wanna play 20 questions", "Ya", "U 1st haha", "Lol OK.  Have you ever tasted pepsi"]
+convo = ["Wanna play 20 questions", "Ya", "You 1st haha", "Ya", "Lol OK.  Have you ever tasted pepsi", "Ya", "Lol"]
 
 reverseConvo :: Phone -> [String] -> [(Digit, Presses)]
 reverseConvo = concatMap . reverseStr
@@ -70,7 +70,7 @@ countElemsInListOccurs s = concatMap (\ch -> [(ch, countElemOccurs ch s)]) $ nub
 
 mostPopItem :: (Eq a, Ord a) => [a] -> (a, Int) -> (a, Int)
 mostPopItem s init = foldr
-  (\(ch, count) (maxCh, max) -> if count > max then (ch, count) else (maxCh, max)) 
+  (\(ch, count) (maxCh, max) -> if count > max && ch /= fst init then (ch, count) else (maxCh, max)) 
   init $ countElemsInListOccurs s
 
 mostPopularLetter :: String -> Char
@@ -81,3 +81,6 @@ mostPopularWord s = fst $ mostPopItem s (" ", 0)
 
 coolestLtr :: [String] -> Char
 coolestLtr = mostPopularLetter . unwords
+
+coolestWord :: [String] -> String
+coolestWord = mostPopularWord . words . intercalate " "
