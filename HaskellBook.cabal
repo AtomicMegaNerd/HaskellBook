@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3f5c9db1a19b9a797ef348c4fdb8fe63791966ae24ee32032c610b271078b36a
+-- hash: bea84fd9c30f9e74913ae80188c757bfae28fc68fd12d5cec44eef8cd79878d4
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -72,6 +72,7 @@ library
       FunWithNewType
       Guards1
       HigherOrder
+      HuttonsRazor
       Learn
       Learn2
       Lib

@@ -1,27 +1,14 @@
 module Main where
 
-import PhonePad
+import HuttonsRazor
 
 main :: IO ()
 main =
   do
-    let roflstar = reverseConvo phone convo
-    print roflstar
-
-    let numPresses = fingerTaps roflstar
-    print numPresses
-
-    let testSentence1 = "Hello"
-    let charCounts = countElemsInListOccurs testSentence1
-    let mostPopular = mostPopularLetter testSentence1
-
-    print charCounts
-    print mostPopular
-
-    let coolest = coolestLtr convo 
-    print coolest
-
-    let coolestW = coolestWord convo 
-    print coolestW
-
+    print $ eval (Add (Lit 1) (Lit 9001))
+    putStrLn $ printExpr (Add (Lit 1) (Lit 9001))
+    let a1 = Add (Lit 9001) (Lit 1)
+    let a2 = Add a1(Lit 20001) 
+    let a3 = Add (Lit 1) a2
+    putStrLn $ printExpr a3
     putStrLn "Program Complete"
