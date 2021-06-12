@@ -1,7 +1,7 @@
 module PhonePad where
 
-import Data.Char (isUpper, toLower, isLetter)
-import Data.List (elemIndex, nub, intercalate)
+import Data.Char (isLetter, isUpper, toLower)
+import Data.List (elemIndex, intercalate, nub)
 import Data.Maybe (fromJust)
 
 type Key = (Digit, String)
@@ -69,9 +69,11 @@ countElemsInListOccurs :: (Eq a, Ord a) => [a] -> [(a, Int)]
 countElemsInListOccurs s = concatMap (\ch -> [(ch, countElemOccurs ch s)]) $ nub s
 
 mostPopItem :: (Eq a, Ord a) => [a] -> (a, Int) -> (a, Int)
-mostPopItem s init = foldr
-  (\(ch, count) (maxCh, max) -> if count > max && ch /= fst init then (ch, count) else (maxCh, max)) 
-  init $ countElemsInListOccurs s
+mostPopItem s init =
+  foldr
+    (\(ch, count) (maxCh, max) -> if count > max && ch /= fst init then (ch, count) else (maxCh, max))
+    init
+    $ countElemsInListOccurs s
 
 mostPopularLetter :: String -> Char
 mostPopularLetter s = fst $ mostPopItem s (' ', 0)

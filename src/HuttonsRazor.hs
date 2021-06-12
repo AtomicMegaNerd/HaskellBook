@@ -8,7 +8,7 @@ eval :: Expr -> Integer
 eval (Lit a) = a
 eval (Add x y) = eval x + eval y
 
--- Expected output: 
+-- Expected output:
 --Prelude> printExpr (Add (Lit 1) (Lit 9001))
 --"1 + 9001"
 --Prelude> a1 = Add (Lit 9001) (Lit 1)
