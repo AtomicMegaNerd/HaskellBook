@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bea84fd9c30f9e74913ae80188c757bfae28fc68fd12d5cec44eef8cd79878d4
+-- hash: 919c85429bc02e4f12a58a7f26532152b3ac3920af5969f3536b538b3376fc02
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -41,6 +41,8 @@ library
       Ch11GuessWhat
       Ch11NerdFun
       Ch11Quantum
+      Ch12Exers
+      Ch12Fun1
       Ch3Exer
       Ch4
       Ch4Exer
