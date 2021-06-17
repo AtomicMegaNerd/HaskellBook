@@ -41,3 +41,21 @@ countVowels = foldr ((+) . isVowel) 0
     isVowel ch
       | ch `elem` "aeiouAEUIOU" = 1
       | otherwise = 0
+
+countConsonants :: String -> Integer
+countConsonants = foldr ((+) . isConsonant) 0
+  where
+    isConsonant :: Char -> Integer
+    isConsonant ch
+      | ch `elem` "qwrtypsdfghjklzxcvbnmQWRTYPSDFGHJKLZXCVBNM" = 1
+      | otherwise = 0
+
+newtype Word' = Word' String deriving (Eq, Show)
+
+mkWord :: String -> Maybe Word'
+mkWord wrd
+  | numVowels > numConsonants = Nothing
+  | otherwise = Just (Word' wrd)
+  where
+    numVowels = countVowels wrd
+    numConsonants = countConsonants wrd
