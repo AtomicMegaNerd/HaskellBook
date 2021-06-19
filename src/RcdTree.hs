@@ -57,11 +57,12 @@ testPostorder =
     then putStrLn "Postorder pass"
     else putStrLn "Postorder fail"
 
-foldTree :: (a -> b -> b) -> b -> RCDTree a -> b
-foldTree f acc t = foldr f acc $ inorder t
+-- Just for reference here is the definition of foldr for lists
+foldr' :: (a -> b -> b) -> b -> [a] -> b
+foldr' f acc [] = acc
+foldr' f acc (x:xs) = f x (foldr f acc xs)
 
--- This was extremely tricky... had to cheat on this one sadly
--- https://medium.com/scientific-breakthrough-of-the-afternoon/catamorphism-for-binary-trees-in-haskell-3ac4acada63b
+-- Now let's try implementing it for an RCDTree
 foldTree' :: (a -> b -> b) -> b -> RCDTree a -> b
 foldTree' f acc Leaf = acc
-foldTree' f acc (Node left x right) = foldTree' f (f x (foldTree' f acc left)) right
+foldTree' f acc (Node left x right) = Node (foldTree' f acc left) (f x) (foldTree' f acc right)
