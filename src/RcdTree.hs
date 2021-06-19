@@ -76,9 +76,9 @@ testPostorder =
 -- Just for reference here is the definition of foldr for lists
 foldr' :: (a -> b -> b) -> b -> [a] -> b
 foldr' f acc [] = acc
-foldr' f acc (x:xs) = f x (foldr f acc xs)
+foldr' f acc (x : xs) = f x (foldr f acc xs)
 
--- Now let's try implementing it for an RCDTree 
+-- Now let's try implementing it for an RCDTree
 -- This was extremely tricky... had to cheat on this one sadly
 -- https://medium.com/scientific-breakthrough-of-the-afternoon/catamorphism-for-binary-trees-in-haskell-3ac4acada63b
 foldTree' :: (a -> b -> b) -> b -> RCDTree a -> b
@@ -87,19 +87,18 @@ foldTree' f acc (Node left x right) = foldTree' f (f x (foldTree' f acc left)) r
 
 -- #### Chapter 12 Exercises ####
 
--- Also basic direct recursion for the initial version of rcdUnfoldr
-rcdUnfoldr' :: (b -> Maybe (a, b)) -> b -> [a]
-rcdUnfoldr' f b = fst fromTuple : rcdUnfoldr' f (snd fromTuple)
-  where
-    fromTuple = fromJust (f b)
-
+-- Again I needed to look online here... these tree exercises are just messing with me.
+-- I was close though and I understand this quite well.
 unfold :: (a -> Maybe (a, b, a)) -> a -> RCDTree b
 unfold f x = case f x of
   Nothing -> Leaf
   Just (x, y, z) -> Node (unfold f x) y (unfold f z)
 
-treeBuild :: Integer -> RCDTree Integer 
+-- This is very subtle and tricky... here n gets passed into unfold
+-- So it will stop recursing when f x returns Nothing.
+treeBuild :: Integer -> RCDTree Integer
 treeBuild n = unfold f 0
-  where f x
-          | x == n = Nothing 
-          | otherwise = Just (x + 1, x, x + 1)
+  where
+    f x
+      | x == n = Nothing
+      | otherwise = Just (x + 1, x, x + 1)

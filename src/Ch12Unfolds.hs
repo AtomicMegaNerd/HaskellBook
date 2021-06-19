@@ -8,9 +8,9 @@ rcdIterate f x = x : rcdIterate f (f x)
 
 -- Also basic direct recursion for the initial version of rcdUnfoldr
 rcdUnfoldr :: (b -> Maybe (a, b)) -> b -> [a]
-rcdUnfoldr f b = fst fromTuple : rcdUnfoldr f (snd fromTuple)
-  where
-    fromTuple = fromJust (f b)
+rcdUnfoldr f b = case f b of
+  Nothing -> []
+  Just (x, y) -> x : rcdUnfoldr f y
 
 -- Re-implementing rcdIterate based on rcdUnfoldr
 rcdIterate' :: (a -> a) -> a -> [a]
