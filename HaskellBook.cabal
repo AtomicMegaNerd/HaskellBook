@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: be906e0da85c1381c036fb0c9c941c7d3c77de79b72b3653642ae60fa45aef5d
+-- hash: 963df58d81b1f9ba46eda12dc1d6ec85d0596164c62c095f48494b7b4cf9b07e
 
 name:           HaskellBook
 version:        0.1.0.0
@@ -41,10 +41,12 @@ library
       Ch11GuessWhat
       Ch11NerdFun
       Ch11Quantum
+      Ch12EitherLib
       Ch12Exers
       Ch12Fun1
       Ch12MaybeLib
       Ch12Natural
+      Ch12Unfolds
       Ch3Exer
       Ch4
       Ch4Exer
@@ -110,6 +112,7 @@ library
   build-depends:
       base >=4.7 && <5
     , time >=1.9.3
+    , tuple >=0.3.0.2
   default-language: Haskell2010
 
 executable HaskellBook-exe
@@ -123,6 +126,7 @@ executable HaskellBook-exe
       HaskellBook
     , base >=4.7 && <5
     , time >=1.9.3
+    , tuple >=0.3.0.2
   default-language: Haskell2010
 
 test-suite HaskellBook-test
@@ -137,4 +141,5 @@ test-suite HaskellBook-test
       HaskellBook
     , base >=4.7 && <5
     , time >=1.9.3
+    , tuple >=0.3.0.2
   default-language: Haskell2010
