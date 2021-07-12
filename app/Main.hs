@@ -1,5 +1,6 @@
 module Main where
 
+import Ch13Exer4
 import Cipher
 import Palindrome
 import System.IO (BufferMode (NoBuffering), hSetBuffering, stdout)
@@ -10,5 +11,6 @@ main =
     hSetBuffering stdout NoBuffering
     --caesarFromUserInput
     -- userInputToVigenere
-    palindrome
+    -- palindrome
+    gimmePerson
     putStrLn "Program Complete"
