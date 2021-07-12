@@ -28,6 +28,15 @@ caesar :: Int -> [Char] -> [Char]
 caesar _ [] = []
 caesar o (x : xs) = shift o x : caesar o xs
 
+caesarFromUserInput :: IO ()
+caesarFromUserInput = do
+  putStr "Enter size of offset: "
+  offset <- readLn
+  putStr "Enter text to be encrypted: "
+  sourceText <- getLine
+  let encryptedText = caesar offset sourceText
+  putStrLn $ "Encrypted text: " ++ encryptedText
+
 -- This de-scrambles the caesar cipher as long as the offest argument passed into
 -- this function matches the offest passed in to the uncasar function.
 --
@@ -67,3 +76,12 @@ vigenere mode keyword = encrypt mode shiftMask
           -- clause that it is upper-case.
           | isLower k = ord k - ord 'a'
           | otherwise = ord k - ord 'A'
+
+userInputToVigenere :: IO ()
+userInputToVigenere = do
+  putStr "Please enter the keyword to use as the cipher: "
+  keyword <- getLine
+  putStr "Please enter the text to be encrypted: "
+  sourceText <- getLine
+  let encryptedText = vigenere Encrypt keyword sourceText
+  putStrLn $ "Encrypted text: " ++ encryptedText
