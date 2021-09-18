@@ -23,6 +23,8 @@ dependencies:
   - base >= 4.7 && < 5
   - time >= 1.9.3
   - tuple >= 0.3.0.2
+  - hspec
+  - QuickCheck
 
 library:
   source-dirs: src
