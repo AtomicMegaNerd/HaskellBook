@@ -16,7 +16,7 @@ rcdAddSums :: (Eq a, Num a) => a -> a
 rcdAddSums 1 = 1
 rcdAddSums n = n + rcdAddSums (n - 1)
 
-rcdSumMult :: (Integral a) => a -> a -> a
+rcdSumMult :: (Eq a, Num a) => a -> a -> a
 rcdSumMult x y
   | y == 0 = 0
   | otherwise = x + rcdSumMult x (y - 1)
