@@ -13,3 +13,4 @@ main =
     sample identityGenStr
     sample identityGenTuple2Int
     sample pairGenIntString
+
